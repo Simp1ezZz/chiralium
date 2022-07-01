@@ -9,6 +9,7 @@
         <module>chiralium-service-api</module>
         <module>chiralium-service-api-impl</module>
         <module>chiralium-support</module>
+        <module>chiralium-handler</module>
     </modules>
 
     <parent>
@@ -39,6 +40,12 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>5.8.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.tencentcloudapi</groupId>
+                <artifactId>tencentcloud-sdk-java</artifactId>
+                <version>3.1.540</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

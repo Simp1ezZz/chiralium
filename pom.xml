@@ -25,17 +25,62 @@
     <description>消息触达平台</description>
     <properties>
         <java.version>1.8</java.version>
+        <chiralium.common.version>0.0.1-SNAPSHOT</chiralium.common.version>
+        <chiralium.handler.version>0.0.1-SNAPSHOT</chiralium.handler.version>
+        <chiralium.support.version>0.0.1-SNAPSHOT</chiralium.support.version>
+        <chiralium.service-api.version>0.0.1-SNAPSHOT</chiralium.service-api.version>
+        <chiralium.service-api-impl.version>0.0.1-SNAPSHOT</chiralium.service-api-impl.version>
+        <chiralium.web.version>0.0.1-SNAPSHOT</chiralium.web.version>
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.simple</groupId>
+                <artifactId>chiralium-common</artifactId>
+                <version>${chiralium.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.simple</groupId>
+                <artifactId>chiralium-handler</artifactId>
+                <version>${chiralium.handler.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.simple</groupId>
+                <artifactId>chiralium-support</artifactId>
+                <version>${chiralium.support.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.simple</groupId>
+                <artifactId>chiralium-service-api</artifactId>
+                <version>${chiralium.service-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.simple</groupId>
+                <artifactId>chiralium-service-api-impl</artifactId>
+                <version>${chiralium.service-api-impl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.simple</groupId>
+                <artifactId>chiralium-web</artifactId>
+                <version>${chiralium.web.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.25</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatisplus-spring-boot-starter</artifactId>
+                <version>1.0.5</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.2.11</version>
+            </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>

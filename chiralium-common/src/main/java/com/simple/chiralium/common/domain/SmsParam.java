@@ -3,7 +3,6 @@ package com.simple.chiralium.common.domain;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -16,9 +15,18 @@ import java.util.Set;
 @Builder
 public class SmsParam {
 
+    /**
+     * 电话号码
+     */
     private Set<String> phoneNumbers;
 
+    /**
+     * 模板id
+     */
     private Integer templateId;
 
-    private List<String> templateParams;
+    /**
+     * 正式内容(多个模板参数用%;%分割{@code })
+     */
+    private String content;
 }

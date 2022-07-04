@@ -1,32 +1,31 @@
 package com.simple.chiralium.web;
 
-import com.simple.chiralium.common.domain.SmsParam;
-import com.simple.chiralium.handler.script.TencentSendSmsScript;
+import com.simple.chiralium.common.domain.TaskInfo;
+import com.simple.chiralium.handler.handler.Handler;
 import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.api.JUnitSoftAssertions;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.Assert;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @SpringBootTest
 @Slf4j
-public class SendSmsTest {
+class SendSmsTest {
+
     @Autowired
-    public TencentSendSmsScript tencentSendSmsScript;
+    private Handler handler;
+
     @Test
-    public void sendSms(){
-        Set<String> phoneSet = new HashSet<>();
-        phoneSet.add("+8617309694133");
-        String templateId="1291069";
-        List<String> templateParams = Arrays.asList("1234","90");
-        String sendSms = tencentSendSmsScript.sendSms(SmsParam.builder()
-                .phoneNumbers(phoneSet)
-                .templateId(templateId)
-                .templateParams(templateParams).build());
-        log.info(sendSms);
+    void testSendSms(){
+        boolean result = handler.doHandler(TaskInfo.builder()
+                .templateId(1290981)
+                .receiver(new HashSet<>(Collections.singletonList("17309694133")))
+                .content("134679%;%30").build());
+        Assertions.assertTrue(result);
     }
 }

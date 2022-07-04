@@ -18,7 +18,7 @@ public class TaskInfo {
     /**
      * 模板Id
      */
-    private String templateId;
+    private Integer templateId;
 
     /**
      * 业务Id

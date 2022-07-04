@@ -1,5 +1,9 @@
-package com.simple.chiralium.handler.domain;
+package com.simple.chiralium.support.domain;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Builder;
 import lombok.Data;
 
@@ -18,32 +22,33 @@ public class SmsRecord {
     /**
      * 主键
      */
+    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**
      * 模板id
      */
-    private Integer templateId;
+    private Long templateId;
 
     /**
      * 手机号码
      */
-    private String mobileNumber;
-
-    /**
-     * 供应商id
-     */
-    private Integer supplierId;
-
-    /**
-     * 供应商名称
-     */
-    private String supplierName;
+    private String phoneNumber;
 
     /**
      * 批次Id
      */
-    private String seriesId;
+    private String serialNo;
+
+    /**
+     * 请求id
+     */
+    private String requestId;
+
+    /**
+     * 计费条数
+     */
+    private Long chargingNum;
 
     /**
      * 短信内容
@@ -53,7 +58,12 @@ public class SmsRecord {
     /**
      * 回执内容
      */
-    private String recordContent;
+    private String recordMessage;
+
+    /**
+     * 回执码
+     */
+    private String recordCode;
 
     /**
      * 发送状态
@@ -68,10 +78,12 @@ public class SmsRecord {
     /**
      * 创建时间
      */
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     /**
      * 更新时间
      */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 }

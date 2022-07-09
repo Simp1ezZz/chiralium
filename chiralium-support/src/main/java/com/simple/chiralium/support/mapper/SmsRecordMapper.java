@@ -5,7 +5,7 @@ import com.simple.chiralium.support.domain.SmsRecord;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 短信记录映射器
+ * 短信记录Mapper
  *
  * @author simpleZzz
  * @date 2022/07/04 21:54:02

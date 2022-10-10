@@ -20,4 +20,8 @@ public class CommonConstant {
      * tencent短信回执成功代码
      */
     public static final String TENCENT_OK = "Ok";
+
+    public static final Integer TRUE = 1;
+
+    public static final Integer FALSE = 0;
 }

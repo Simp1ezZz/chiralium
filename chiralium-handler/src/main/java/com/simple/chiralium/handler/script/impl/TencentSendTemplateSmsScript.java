@@ -5,8 +5,8 @@ import cn.hutool.json.JSONUtil;
 import com.simple.chiralium.common.constant.CommonConstant;
 import com.simple.chiralium.common.domain.SmsParam;
 import com.simple.chiralium.common.enums.SmsSendStatusEnum;
-import com.simple.chiralium.support.domain.SmsRecord;
 import com.simple.chiralium.handler.script.SmsScript;
+import com.simple.chiralium.support.domain.SmsRecord;
 import com.tencentcloudapi.common.AbstractModel;
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
@@ -22,11 +22,10 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
- * 腾讯发送短信测试
+ * 腾讯发送模板短信
  * Tencent Cloud Sms Sendsms
  *
  * @author SimpleZzz
@@ -34,7 +33,7 @@ import java.util.List;
  */
 @Slf4j
 @Component
-public class TencentSendSmsScript implements SmsScript {
+public class TencentSendTemplateSmsScript implements SmsScript {
 
     @Value("${tencent.sms.secretId}")
     public String secretId;
@@ -72,7 +71,7 @@ public class TencentSendSmsScript implements SmsScript {
 
     /**
      * 初始化短信发送客户端
-     * TODO 写死的参数后期均做成配置
+     * #TODO 写死的参数后期均做成配置
      *
      * @return {@link SmsClient}
      */
@@ -101,6 +100,7 @@ public class TencentSendSmsScript implements SmsScript {
         req.setSmsSdkAppId(sdkAppId);
         req.setSignName(signName);
         req.setTemplateId(smsParam.getTemplateId().toString());
+        // 模板参数分割
         req.setTemplateParamSet(smsParam.getContent().split(CommonConstant.SPLIT_CODE));
         req.setPhoneNumberSet(smsParam.getPhoneNumbers().toArray(new String[0]));
         return req;

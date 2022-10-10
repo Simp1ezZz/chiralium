@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.simple</groupId>
-            <artifactId>chiralium-support</artifactId>
+            <artifactId>chiralium-service-api-impl</artifactId>
         </dependency>
         <dependency>
             <groupId>com.tencentcloudapi</groupId>

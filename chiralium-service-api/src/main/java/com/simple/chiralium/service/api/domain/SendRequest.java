@@ -17,7 +17,7 @@ public class SendRequest {
     private Long messageTemplateId;
 
     /**
-     * 接收机
+     * 接收者
      */
     private String receiver;
 }

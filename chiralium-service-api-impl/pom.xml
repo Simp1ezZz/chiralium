@@ -16,4 +16,15 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.simple</groupId>
+            <artifactId>chiralium-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.simple</groupId>
+            <artifactId>chiralium-service-api</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

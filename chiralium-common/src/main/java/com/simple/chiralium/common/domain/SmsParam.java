@@ -26,7 +26,7 @@ public class SmsParam {
     private Integer templateId;
 
     /**
-     * 正式内容(多个模板参数用%;%分割{@code })
+     * 正式内容(多个模板参数用%;%分割)
      */
     private String content;
 }

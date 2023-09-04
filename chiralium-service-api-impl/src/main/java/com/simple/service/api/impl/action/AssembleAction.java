@@ -1,8 +1,7 @@
 package com.simple.service.api.impl.action;
 
 import com.simple.chiralium.common.constant.CommonConstant;
-import com.simple.chiralium.common.domain.MessageParam;
-import com.simple.chiralium.common.domain.SmsParam;
+import com.simple.chiralium.service.api.domain.MessageParam;
 import com.simple.chiralium.common.domain.TaskInfo;
 import com.simple.chiralium.common.enums.RespStatusEnum;
 import com.simple.chiralium.common.vo.BasicResultVO;
@@ -36,7 +35,7 @@ public class AssembleAction implements BusinessProcess<SendTaskModel> {
         Long messageTemplateId = sendTaskModel.getMessageTemplateId();
 
         Optional<MessageTemplate> messageTemplate = messageTemplateDao.findById(messageTemplateId);
-        if (!messageTemplate.isPresent() || messageTemplate.get().getIsDeleted().equals(CommonConstant.TRUE)) {
+        if (messageTemplate.isEmpty() || messageTemplate.get().getIsDeleted().equals(CommonConstant.TRUE)) {
             processContext.setNeedBreak(true).setResponse(BasicResultVO.fail(RespStatusEnum.TEMPLATE_NOT_FOUND));
         }
 

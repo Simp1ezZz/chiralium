@@ -18,7 +18,7 @@ public class TaskInfo {
     /**
      * 模板Id
      */
-    private Integer templateId;
+    private Long templateId;
 
     /**
      * 业务Id
@@ -33,5 +33,5 @@ public class TaskInfo {
     /**
      * 接收人
      */
-    private Set<String> receiver;
+    private Set<String> receiverSet;
 }

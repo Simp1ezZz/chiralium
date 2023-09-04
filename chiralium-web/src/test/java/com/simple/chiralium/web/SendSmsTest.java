@@ -21,9 +21,9 @@ class SendSmsTest {
     @Test
     void testSendSms(){
         boolean result = handler.doHandler(TaskInfo.builder()
-                .templateId(1290981)
-                .receiver(new HashSet<>(Collections.singletonList("17309694133")))
-                .content("134679%;%30").build());
+                .templateId(1290981L)
+                .receiverSet(new HashSet<>(Collections.singletonList("17309694133")))
+                .content("123456%;%30").build());
         Assertions.assertTrue(result);
     }
 }

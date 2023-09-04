@@ -1,4 +1,4 @@
-package com.simple.chiralium.common.domain;
+package com.simple.chiralium.handler.domain;
 
 import lombok.Builder;
 import lombok.Data;
@@ -23,7 +23,7 @@ public class SmsParam {
     /**
      * 模板id
      */
-    private Integer templateId;
+    private Long templateId;
 
     /**
      * 正式内容(多个模板参数用%;%分割)

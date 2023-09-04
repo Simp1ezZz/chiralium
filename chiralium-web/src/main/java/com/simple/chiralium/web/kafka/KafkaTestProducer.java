@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
-import org.springframework.util.concurrent.ListenableFuture;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 @Component
@@ -20,7 +20,7 @@ public class KafkaTestProducer {
     public void sendMessage(String message) throws ExecutionException, InterruptedException {
         KafkaTestDomain kafkaTestDomain = new KafkaTestDomain();
         kafkaTestDomain.setCode("111").setName("系统日志1").setMessage(message);
-        ListenableFuture<SendResult<String, String>> testTopic = kafkaTemplate.send("testTopic", JSON.toJSONString(kafkaTestDomain));
+        CompletableFuture<SendResult<String, String>> testTopic = kafkaTemplate.send("testTopic", JSON.toJSONString(kafkaTestDomain));
         SendResult<String, String> stringStringSendResult = testTopic.get();
         log.info(">>>>>>>>>>>>>>>>>>>>\n{}",stringStringSendResult.toString());
     }

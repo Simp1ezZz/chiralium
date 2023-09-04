@@ -1,7 +1,7 @@
 package com.simple.chiralium.handler.handler.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import com.simple.chiralium.common.domain.SmsParam;
+import com.simple.chiralium.handler.domain.SmsParam;
 import com.simple.chiralium.common.domain.TaskInfo;
 import com.simple.chiralium.handler.handler.Handler;
 import com.simple.chiralium.handler.script.SmsScript;
@@ -30,10 +30,10 @@ public class SmsHandler implements Handler {
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean doHandler(TaskInfo taskInfo) {
+    public boolean doHandler(TaskInfo taskInfo){
         SmsParam smsParam = SmsParam.builder()
                 .templateId(taskInfo.getTemplateId())
-                .phoneNumbers(taskInfo.getReceiver())
+                .phoneNumbers(taskInfo.getReceiverSet())
                 .content(taskInfo.getContent()).build();
         List<SmsRecord> smsRecords = smsScript.send(smsParam);
         if (CollUtil.isEmpty(smsRecords)) {

@@ -3,7 +3,7 @@ package com.simple.chiralium.handler.script.impl;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.json.JSONUtil;
 import com.simple.chiralium.common.constant.CommonConstant;
-import com.simple.chiralium.common.domain.SmsParam;
+import com.simple.chiralium.handler.domain.SmsParam;
 import com.simple.chiralium.common.enums.SmsSendStatusEnum;
 import com.simple.chiralium.handler.script.SmsScript;
 import com.simple.chiralium.support.domain.SmsRecord;
@@ -124,7 +124,7 @@ public class TencentSendTemplateSmsScript implements SmsScript {
 
         for (SendStatus sendStatus : response.getSendStatusSet()) {
             SmsRecord smsRecord = SmsRecord.builder()
-                    .templateId(smsParam.getTemplateId().longValue())
+                    .templateId(smsParam.getTemplateId())
                     .phoneNumber(sendStatus.getPhoneNumber())
                     .serialNo(sendStatus.getSerialNo())
                     .requestId(response.getRequestId())

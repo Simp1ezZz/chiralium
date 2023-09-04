@@ -2,8 +2,7 @@ package com.simple.service.api.impl.action;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.text.CharSequenceUtil;
-import cn.hutool.core.util.StrUtil;
-import com.simple.chiralium.common.domain.MessageParam;
+import com.simple.chiralium.service.api.domain.MessageParam;
 import com.simple.chiralium.common.enums.RespStatusEnum;
 import com.simple.chiralium.common.vo.BasicResultVO;
 import com.simple.chiralium.support.pipeline.BusinessProcess;

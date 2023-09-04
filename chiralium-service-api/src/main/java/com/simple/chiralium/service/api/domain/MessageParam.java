@@ -1,4 +1,4 @@
-package com.simple.chiralium.common.domain;
+package com.simple.chiralium.service.api.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

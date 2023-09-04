@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.1</version>
+        <version>3.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.simple</groupId>
@@ -24,13 +24,18 @@
     <name>chiralium</name>
     <description>消息触达平台</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <chiralium.common.version>0.0.1-SNAPSHOT</chiralium.common.version>
         <chiralium.handler.version>0.0.1-SNAPSHOT</chiralium.handler.version>
         <chiralium.support.version>0.0.1-SNAPSHOT</chiralium.support.version>
         <chiralium.service-api.version>0.0.1-SNAPSHOT</chiralium.service-api.version>
         <chiralium.service-api-impl.version>0.0.1-SNAPSHOT</chiralium.service-api-impl.version>
         <chiralium.web.version>0.0.1-SNAPSHOT</chiralium.web.version>
+        <mysql.version>8.1.0</mysql.version>
+        <druid.version>1.2.18</druid.version>
+        <hutool.version>5.8.21</hutool.version>
+        <tencentcloud-sdk-java.version>3.1.817</tencentcloud-sdk-java.version>
+        <nacos.version>0.2.12</nacos.version>
     </properties>
 
 
@@ -66,26 +71,37 @@
                 <artifactId>chiralium-web</artifactId>
                 <version>${chiralium.web.version}</version>
             </dependency>
+            <!--alibaba依赖管理-->
             <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.30</version>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2022.0.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
+            <!--mysql驱动-->
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--druid连接池-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
-                <version>1.2.11</version>
+                <version>${druid.version}</version>
             </dependency>
+            <!--hutool工具包-->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
-                <version>5.8.4</version>
+                <version>${hutool.version}</version>
             </dependency>
-
+            <!--腾讯云短信sdk-->
             <dependency>
                 <groupId>com.tencentcloudapi</groupId>
                 <artifactId>tencentcloud-sdk-java</artifactId>
-                <version>3.1.540</version>
+                <version>${tencentcloud-sdk-java.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -95,7 +111,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.7.1</version>
+                <version>3.0.2</version>
             </plugin>
         </plugins>
     </build>

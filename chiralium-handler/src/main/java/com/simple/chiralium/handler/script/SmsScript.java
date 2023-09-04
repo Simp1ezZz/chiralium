@@ -1,6 +1,6 @@
 package com.simple.chiralium.handler.script;
 
-import com.simple.chiralium.common.domain.SmsParam;
+import com.simple.chiralium.handler.domain.SmsParam;
 import com.simple.chiralium.support.domain.SmsRecord;
 
 import java.util.List;

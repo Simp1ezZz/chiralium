@@ -1,13 +1,7 @@
-# 腾讯云短信配置 TODO
-tencent:
-  sms:
-    secretId:
-    secretKey:
-    sdkAppId:
-    signName:
-
 # 数据库配置
 spring:
+  application:
+    name: chiralium
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/chiralium
@@ -15,7 +9,14 @@ spring:
     password: Zx199857
 
   kafka:
-    bootstrap-servers: localhost:9092
-
+    bootstrap-servers:
+      - localhost:9092
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+  config:
+    import:
+      - nacos:chiralium.yaml
 server:
   port: 9000

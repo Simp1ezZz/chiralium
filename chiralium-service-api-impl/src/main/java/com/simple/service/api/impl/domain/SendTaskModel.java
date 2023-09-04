@@ -1,6 +1,6 @@
 package com.simple.service.api.impl.domain;
 
-import com.simple.chiralium.common.domain.MessageParam;
+import com.simple.chiralium.service.api.domain.MessageParam;
 import com.simple.chiralium.common.domain.TaskInfo;
 import com.simple.chiralium.support.pipeline.ProcessModel;
 import lombok.AllArgsConstructor;

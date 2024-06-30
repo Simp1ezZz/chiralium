@@ -1,13 +1,13 @@
-package com.simple.chiralium;
+package com.simple.chiralium.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ChiraliumApplicationTests {
+class ChiraliumWebApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

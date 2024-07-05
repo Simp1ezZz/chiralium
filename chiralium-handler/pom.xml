@@ -14,7 +14,18 @@
   <description>chiralium-handler</description>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
-
+    <dependency>
+      <groupId>com.simple</groupId>
+      <artifactId>chiralium-support</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.simple</groupId>
+      <artifactId>chiralium-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.apistd.uni</groupId>
+      <artifactId>uni-sdk</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
